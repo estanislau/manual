@@ -1,0 +1,34 @@
+# Incluindo arquivo com echo -------------------------------------------- #
+#
+# echo <nome-arquivo> >> .gitignore
+#
+# Caracteres curinga ---------------------------------------------------- #
+#
+# *				#  zero ou mais caracteres (exceto`/`)
+# ?				#  um único caractere (exceto`/`)
+# !				#  negação (negar ignore)
+# #				#  comentários no arquivo gitignore
+#
+# Formato para inclusão ------------------------------------------------ #
+#
+# <nome-arquivo.extensão>
+# *.<extensão>			# ignora a extensão descrita
+# **<nome-diretorio>		# ignora diretório e subdiretórios
+#
+# Padrões de correspondência ------------------------------------------- #
+#
+# .tempArq			# nomes de arquivos literais
+# temp/				# diretórios
+#
+# Exemplos ------------------------------------------------------------- #
+#
+# /dirTeste			# ignora todos os diretórios de nome `dirTeste`
+# dirTeste/			# ignora o diretório `dirTeste` e seus arquivos
+# !saida.log			# não ignora o arquivo `saida.log` 
+# arqTeste			# ignora o arquivo (ou diretório) `arqTeste`
+# *.log				# ingora todos os arquivos com extensão `.log`
+# arq*				# ignora todos os arquivos inciados com `arq`
+# ?arq				# ignora todos os arquivos não importando o 
+#				  primeiro caractere, mas que possua `rq` na sequência
+
+*.swp
