@@ -7,6 +7,7 @@ durante um determinado período, para que você possa trabalhar em outra coisa, 
 O stashing é útil quando você precisa alternar com rapidez o contexto e trabalhar em outra coisa, mas está no meio da alteração de código e 
 não está pronto para fazer commit (que fica suspenso para os arquivos em stash).
 - `commithash` são os primeiros 7 caracteres do hash do commit que encontramos no `log`
+- `origin` é um alias que o Git criou para substituir o URL remoto de um repositório remoto.
  
 - Branch: é um ponteiro móvel que leva a um commit:
 -- Pode modificar sem alterar o local principal (main)
@@ -73,7 +74,7 @@ D - Arquivos excluídos (Deleted)
 `git add`: adiciona um arquivo para ser monitorado
 `git add .`, `git add -A` ou `git add -all`: adiciona todos os arquivos para serem monitorados
 `git commit -a -m "<comentario>"`: para arquivos em Modified, adiciona para Staged e faz o commmit
-`git commit -m ",comentariio>"`: faz um commit do arquivo (snapshot)
+`git commit -m ",comentario>"`: faz um commit do arquivo (snapshot)
 
 ### commit --ammend 
 `commit --amend`: é usado para modificar o arquivo `commit`.
@@ -91,8 +92,8 @@ Este novo `commit` substitui `commit` inteiramente o mais recente.
 `git show <hash>`: mostra as alterações sofridas pela hash
 
 ## Diferenças entre versões
-git diff: mostra as mudanças antes de um commit (use antes de fazer um commit)
-git diff --name-only: mostra somente o nome do arquivo que foi modificado
+`git diff`: mostra as mudanças antes de um commit (use antes de fazer um commit)
+`git diff --name-only`: mostra somente o nome do arquivo que foi modificado
 
 ## Desfazer 
 ### checkout
@@ -134,8 +135,7 @@ Se você souber o `hash` do commit, poderá desfazê-lo
 `git remote`: mostra os remotes cadastrados
 `git remote -v`: mostra o endereço dos remotes cadastrados
 
-`git push --set-upstream origin master`: envia nossa ramificação master para a 
-url origin e define-a como a branch remota padrão
+`git push --set-upstream origin master`: envia nossa ramificação master para a url origin e define-a como a branch remota padrão
 
 ### Clone de repositório remoto
 A clone é uma cópia completa de um repositório, incluindo todos os logs e versões de arquivos
@@ -168,22 +168,13 @@ Agora temos dois repositórios remotos:
 `git clone https://github.com/<nome-pagina>/<nome-repo>.git <nome-folder>`
 - De acordo com as convenções de nomenclatura do Git, é recomendável nomear seu próprio repositório como `origin` e aquele para o qual você fez o fork como `upstream`
 
-
-5. Acesse a pasta e confirme a condição com `git status`
-6. Confirme se temos todos os registros com `git log`
+12. Acesse a pasta e confirme a condição com `git status`
+13. Confirme se temos todos os registros com `git log`
 
 ### Enviar mudanças para o GitHub Fork
 1. Commit as mudanças
 2. Envie as mudanças com `git push origin`
 3. GitHub: confirme o novo commit e envie um Pull Request
-4. 
-
-
-
-
-
-
-
 
 ## Branch
 É uma versão nova/separada do repositório principal (main)
@@ -208,9 +199,7 @@ que já não existem mais remotamente serão excluídos.
 3. Excluimos o branch secundário com `git branch -d <nome-branch>
 
 `git branch`: lista os branchs existentes e sinaliza o ativo (na cor verde)
-
 `git checkout <nome-branch>`: alterna para o branch indicado para o local.
-
 `git checkout -b <nome-branch>`: Criar um branch. Usar opção `-b` em `checkout` criará uma nova ramificação e moverá para ela, se ela não existir
 
 ### Branch: excluir um branch
@@ -242,8 +231,6 @@ Use `git status` para mais detalhes sobre o conflito. Abra o arquivo com o edito
 -- Indicado para o dia a dia
 - Contra
 -- Perde ordem cronológica
-
-
 
 ## Atualizando o repositório local 
 É assim que você mantém seu Git local atualizado a partir de um repositório remoto:
@@ -284,11 +271,11 @@ Esses são os passos que devemos fazer:
 `git config --global alias.<alias> <comando>`: ex.: `git config --global alias.s status`
 
 ## Tags
-git tag -a <tag> -m <"mensagem-tag">: cria uma tag
-git tag: lista as tags
-git push <origin> <nome-tag>: envia para GitHub as tags
-git tag -d <nome-tag>: apaga a tag local
-git push <origin> :<nome-tag>: apaga a tag remota
+`git tag -a <tag> -m <mensagem-tag>`: cria uma tag
+`git tag`: lista as tags
+`git push <origin> <nome-tag>`: envia para GitHub as tags
+`git tag -d <nome-tag>`: apaga a tag local
+`git push <origin> :<nome-tag>`: apaga a tag remota
 
 ## Gitignore
 O Git pode especificar quais arquivos ou partes do seu projeto devem ser ignorados pelo Git usando um arquivo `.gitignore`.
