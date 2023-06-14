@@ -84,8 +84,8 @@ M-0 C-k	    C-k			  Linha (até o final)
 C-x DEL	    M-k		          Sentença
 M-- C-M-k   C-M-k		  Sexp
 
-C-w				  Corta região
-M-w				  Copia a região
+C-w				  Cortar região
+M-w				  Copiar a região
 M-z char			  Cortar até a próxima ocorrência de char
 
 C-y 			       	  Colar a última coisa cortada

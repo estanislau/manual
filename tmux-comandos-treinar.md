@@ -82,10 +82,14 @@ Shift +					seleciona o texto
 setw -g mode-keys vi			ativa modo vi
 ^					início de linha
 $					final de linha
-Space					seleção
-C-b [					modo cópia
-Enter					copiar
-C-b ]					colar
+
+C-b [                                   Entre no modo de cópia
+Barra espaço                            Entra no modo seleção
+Setas                                   Movimenta para selecionar
+Enter                                   Copia para o buffer
+C-b ]                                   Cola o buffer mais recente
+
+
 
 
 ## tmuxinator
@@ -164,3 +168,13 @@ tmuxinator version
 - mux doctor - examina seu ambiente e identifica problemas
 - mux debug <nome-projeto> - Mostra os comandos do shell que são executados para um projeto
 - mux debub <nome-projeto> > test.sh - redireciona o debug para ´test.sh
+
+
+# Atualizar .tmux.conf
+Se `bind r source-file ~/.tmux.conf` estiver em `.tmux.conf`, atualize com:
+`C-b r` 
+
+
+Use o comando (Ctrl+Space, Shift+:)
+`C-b :`  e digite: `source-file ~/.tmux.conf`
+

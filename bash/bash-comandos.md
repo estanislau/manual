@@ -1,5 +1,65 @@
 # Comandos do Bash
 
+## Edição de linha de comando
+| Teclas  | Ação |
+| :---: | --- |
+| Ctrl-B | Mover o cursor para a esquerda |
+| Ctrl-F | Mover o cursor para a direita |
+| Ctrl-P | Ver o comando anterior (ou mover o cursor para cima) |
+| Ctrl-N | Ver o próximo comando (ou mover o cursor para baixo) |
+| Ctrl-A | Mover o cursor para o início da linha |
+| Ctrl-E | Mover o cursor para o fim da linha |
+| Ctrl-W | Apagar a palavra anterior |
+| Ctrl-U | Apagar do cursor até o início da linha |
+| Ctrl-K | Apagar do cursor até o final da linha |
+| Ctrl-Y | Colar o texto apagado (por exemplo, com Ctrl-U) |
+[ Teclas usadas na linha de comando]
+
+
+## Obtendo ajuda
+`$ help` : informações gerais sobre os built-ins do Shell
+`$ aprobos` : mostra informações sobre um tópico 
+`$ whatis` : obtém uma breve descrição de um comando do sistema 
+`$ info` : para acessar o manual info.
+`$ man` :  a mais completa documentação do Linux
+
+### man
+| Comando | Ação |
+| :---: | --- |
+| h | Mostra a ajuda do man
+| q | Sai do man |
+| [N]e | Avança uma linha, ou N linhas, quando especificado |
+| [N]y | Volta uma linha, ou N linhas, quando especificado |
+| f | Avança uma tela |
+| b | Volta uma tela |
+| \texto | Procura por um texto no texto apresentado pelo man |
+[ Comandos de navegação no man]
+
+Quando alguém se referir a uma página de manual, o número da seção aparecerá entre parênteses ao lado do nome, por exemplo, ping(8). A tabela lista as seções e seus números.
+
+| Seção | Descrição |
+| --- | --- |
+| 1 | Comandos de usuário: que podem ser executados a partis de um Shell |
+| 2 | Chamadas de sistema: funções que têm de ser executadas pelo kernel |
+| 3 | Bibliotecas de funções: documentação geral da biblioteca (libc) de programação Unix |
+| 4 | Formatos de arquivos especiais: : interface de dispositivos e informações sobre drivers e hardwares |
+| 5 | Arquivos de configuração: descrições de arquivo (arquivos de configuração do sistema) e convenções |
+| 6 | Jogos e demonstrações (bls) |
+| 7 | Pacotes de macro: formatos de arquivo, protocolos de rede, convenções e codificações (ASCII, sufixos e assim por diante) |
+| 8 | Comandos de administração do sistema e servidores |
+[Seções do manual online]
+
+Você pode selecionar uma página de manual pela seção, o que, às vezes, é importante, pois `man` exibe a primeira página do manual que for encontrada quando uma correspondência for feita com um determinado termo de pesquisa. Por exemplo, para ler a descrição do arquivo `/etc/passwd` (em oposição à descrição do comando `passwd`), você poderá inserir o número da seção antes do nome da página:
+`$ man 5 passwd` 
+ 
+- `$ man -k palavra-chave` : buscar uma página do manual contendo uma palavra-chave. Isso é útil se você não souber exatamente o nome do comando que você quer. Por exemplo, se estiver procurando um comando para ordenar (sort) algo, execute:`$ man -k sort`    
+- Alguns pacotes descarregam a documentação disponível em `/usr/share/doc`, sem se importar com sistemas de manual online como man ou info. Verifique esse diretório em seu sistema se você se vir procurando documentações. E, é claro, pesquise na Internet.
+-  O Projeto GNU decidiu que não gostava muito das páginas de manual e mudou para outro formato chamado info (ou texinfo). Com frequência, essa documentação vai além do que contém uma página de manual típica, mas, às vezes, é mais complexa.  
+
+`Ctrl + D` : em uma linha vazia interrompe a entrada-padrão corrente do terminal (e geralmente encerra um programa). Não o confunda com Ctrl- C   
+`Ctrl + C` : encerra um programa independentemente de sua entrada ou de sua saída. 
+`Ctrl + L` : limpar o terminal. 
+
 ## Alias: rm, cp, mv: pede confirmação para executar
 Edite o arquivo `/etc/profile` e inclua as linhas para solicitar a confirmação:
 
@@ -106,9 +166,6 @@ Cria com mensagem:
 touch "Um texto qualquer" > nome-arquivo
 ```
 
-
-
-
 ## History
 `.bash_history`: histórico do shell interativo
 `echo $HISTFILE`: mostra o caminho do arquivo do shell interativo
@@ -143,79 +200,6 @@ touch "Um texto qualquer" > nome-arquivo
 `rm -i`: solicita confirmação para remover arquivo
 `alias rm=`rm -i`: cria um alias para o comando `rm -i` 
 
-
-```
-```
-```
-```
-```
-```
-```
-```
-```
-[linux : zsh e Oh my zsh](:/0192a14cad624a65ba3b010150785e31)
-
-${toc}
-
-## Edição de linha de comando
- 
-| Teclas  | Ação |
-| :---: | --- |
-| Ctrl-B | Mover o cursor para a esquerda |
-| Ctrl-F | Mover o cursor para a direita |
-| Ctrl-P | Ver o comando anterior (ou mover o cursor para cima) |
-| Ctrl-N | Ver o próximo comando (ou mover o cursor para baixo) |
-| Ctrl-A | Mover o cursor para o início da linha |
-| Ctrl-E | Mover o cursor para o fim da linha |
-| Ctrl-W | Apagar a palavra anterior |
-| Ctrl-U | Apagar do cursor até o início da linha |
-| Ctrl-K | Apagar do cursor até o final da linha |
-| Ctrl-Y | Colar o texto apagado (por exemplo, com Ctrl-U) |
-[ Teclas usadas na linha de comando]
-# Linux : comandos básicos
-## Obtendo ajuda
-`$ help` : informações gerais sobre os built-ins do Shell  
-`$ aprobos` : mostra informações sobre um tópico   
-`$ whatis` : obtém uma breve descrição de um comando do sistema   
-`$ info` : para a cessar o manual info.
-`$ man` :  a mais completa documentação do Linux  
-
-### man
-| Comando | Ação |
-| :---: | --- |
-| h | Mostra a ajuda do man
-| q | Sai do man |
-| [N]e | Avança uma linha, ou N linhas, quando especificado |
-| [N]y | Volta uma linha, ou N linhas, quando especificado |
-| f | Avança uma tela |
-| b | Volta uma tela |
-| \texto | Procura por um texto no texto apresentado pelo man |
-[ Comandos de navegação no man]
-
-Quando alguém se referir a uma página de manual, o número da seção aparecerá entre parênteses ao lado do nome, por exemplo, ping(8). A tabela lista as seções e seus números.
-
-| Seção | Descrição |
-| --- | --- |
-| 1 | Comandos de usuário: que podem ser executados a partis de um SHell |
-| 2 | Chamadas de sistema: funções que têm de ser executadas pelo kernel |
-| 3 | Bibliotecas de funções: documentação geral da biblioteca (libc) de programação Unix |
-| 4 | Formatos de arquivos especiais: : interface de dispositivos e informações sobre drivers e hardwares |
-| 5 | Arquivos de configuração: descrições de arquivo (arquivos de configuração do sistema) e convenções |
-| 6 | Jogos e demonstrações (bls) |
-| 7 | Pacotes de macro: formatos de arquivo, protocolos de rede, convenções e codificações (ASCII, sufixos e assim por diante) |
-| 8 | Comandos de administração do sistema e servidores |
-[Seções do manual online]
-
-Você pode selecionar uma página de manual pela seção, o que, às vezes, é importante, pois `man` exibe a primeira página do manual que for encontrada quando uma correspondência for feita com um determinado termo de pesquisa. Por exemplo, para ler a descrição do arquivo `/etc/passwd` (em oposição à descrição do comando `passwd`), você poderá inserir o número da seção antes do nome da página:
-`$ man 5 passwd` 
-   
-- `$ man -k palavra-chave` : buscar uma página do manual contendo uma palavra-chave. Isso é útil se você não souber exatamente o nome do comando que você quer. Por exemplo, se estiver procurando um comando para ordenar (sort) algo, execute:`$ man -k sort`    
-- Alguns pacotes descarregam a documentação disponível em `/usr/share/doc`, sem se importar com sistemas de manual online como man ou info. Verifique esse diretório em seu sistema se você se vir procurando documentações. E, é claro, pesquise na Internet.
--  O Projeto GNU decidiu que não gostava muito das páginas de manual e mudou para outro formato chamado info (ou texinfo). Com frequência, essa documentação vai além do que contém uma página de manual típica, mas, às vezes, é mais complexa.  
-
-`Ctrl + D` : em uma linha vazia interrompe a entrada-padrão corrente do terminal (e geralmente encerra um programa). Não o confunda com Ctrl- C   
-`Ctrl + C` : encerra um programa independentemente de sua entrada ou de sua saída. 
-`Ctrl + L` : limpar o terminal.    
 
 `$ cat /etc/passwd` : exibe o conteúdo do arquivo /etc/passwd, que contém informações do sistema  
 
@@ -434,9 +418,7 @@ Os links simbólicos são apenas nomes que apontam para outros nomes.  Eles ofer
 `pwd -P` : links simbólicos às vezes, podem esconder o path completo verdadeiro do diretório de trabalho corrente. Use `pwd -P` para acabar com essa confusão.   
 
 ## Arquivamento e compressão de arquivos
-
 ### gzip (compactação)
-
 - gzip não faz arquivamento, ou seja, ela não empacota vários arquivos e diretórios em um só arquivo.  
 - gzip apenas compacta o original; não gera uma cópia compactada do original. 
 
@@ -446,8 +428,6 @@ Os links simbólicos são apenas nomes que apontam para outros nomes.  Eles ofer
 ### tar (empacotamento)
 `$ tar cvf <arquivo.tar> arquivo1 arquivo2 ...` :  empacota   
 `$ tar xvf <arquivo.tar>` : desempacota.   
-
-
 
 Arquivos tar se encontrarem normalmente compactados, com nomes de arquivo terminados com .tar.gz.   
 `$ gunzip arquivo.tar.gz` : descompacta arquivo gzip  
@@ -490,19 +470,13 @@ Combina as funções de arquivamento e de compressão usando um pipeline.
 ## Usuário
 
 `# userdel -r usuario` : remover usuário
-
 `# useradd -m usuario` : criar usuário (-m para criar o diretório)  
-
 `# sudo usermod -aG sudo username` : adicione o usuário ao grupo sudo  
-
 `# chsh -s /bin/bash usuario` : Altere o shell do usuário  
-
-
-
 
  ##  Globbing no shell (caracteres-curinga)
  O shell faz a correspondência dos argumentos contendo globs com nomes de arquivo, substitui os argumentos por esses nomes e, em seguida, executa a linha de comando revisada. A substituição é chamada de expansão porque o shell faz a substituição por todos os nomes de arquivo correspondentes.  
-  
+ 
   `*` : diz ao shell para efetuar a correspondência com qualquer quantidade de caracteres arbitrários
   - `at*` : é expandido com todos os nomes de arquivo que comecem com at. 
 - `*at` : é expandido com todos os nomes de arquivo que terminem com at. 
@@ -524,16 +498,13 @@ Você poderá ter problemas com globs porque `.*` corresponde a `.` e a `..` (os
 `$ vi`   
 `$ emacs`    
  
- ## Glossário
+## Glossário
 - Globbing : O shell pode efetuar correspondência de padrões simples com nomes de arquivos e de diretórios – processo conhecido como globbing, semelhante ao conceito de caracteres- curinga em outros sistemas.
 - built-ins : são comandos que são incorporados ao Shell, isto é, não são instruções autônomas como o `who`, por exemplo. São comandos cujos códigos se encotram incorporados ao código do Shell.
 
-[Permissão sudo](:/6b591dc806e24521bbb529ceea92a094)
-
-
-## Instalar comando cal
+## Instalar programas
 ```
-$ apt install ncal
+$ apt install ncal xclip
 ```
 
 

@@ -114,6 +114,7 @@ C-b q <índice>				Vai para o painel de índice 'n'
 C-b z					Zoom in/out nos painéis
 	
 # Destruindo painéis
+
 C-b x					Pede confirmação
 
 C-b f       				Procurar um painel
@@ -123,27 +124,35 @@ C-b M       				Limpar o painel marcado
 C-b !       				Converte o painel para uma nova janela
 
 # Copiar e colar no buffer 
+
+A rigor, o modo buffer é o 'modo cópia':
 C-b : setw -q mode-keys vi		Ativar o modo de cópia do vi
 
 C-b [					Entre no modo de cópia
-Barra espaço				Entra no modo seleção
+Enter					Sai copiando a seleção
+
+C-Barra espaço				Entra no modo seleção
 Setas					Movimenta para selecionar
-Enter					Copia para o buffer
+C-w					Copia para o buffer
 C-b ]   	   			Cola o buffer mais recente
 
 C-b Page   				Entre no modo de cópia e role para cima
 
-q					Para sair do modo buffer
-
-# Gerenciador de clipboard
-C-b =					Menu com todas as cópias
-C-b #					Mostra todas as cópias 
-<numero>				Retorna e cola a escolha (funciona com Enter)
-
 # Copia e cola com ajuda do terminal 
+
 Shift					Arraste o mouse para marcar o texto
 Shift-Bd				Botão direito para opções do terminal (copy, etc)
 
+Para sair do modo buffer, basta teclar 'q'.
+
+# Gerenciador de clipboard ------------------------------------------------------------ # 
+	
+C-b =					Menu com todas as cópias
+<numero>				Retorna e cola a escolha (funciona com Enter)
+C-b #					Mostra todas as cópias 
+Barra espaço				Entra no modo seleção
+Enter					Sai copiando a seleção
+C-b [					Cola o que foi selecionado
 
 # Miscelânea -------------------------------------------------------------------------- # 
 
