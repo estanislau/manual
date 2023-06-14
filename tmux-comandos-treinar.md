@@ -86,3 +86,81 @@ Space					seleção
 C-b [					modo cópia
 Enter					copiar
 C-b ]					colar
+
+
+## tmuxinator
+### Configurações
+`alias mux="tmuxinator"`: crie um alias no `.bashrc`
+` ~/.tmuxinator/monitor.yml`: caminho do script tmuxinator
+
+### Comandos
+`mux <nome-script>`: inicia o script
+
+`mux new <nome-script>`: cria um script
+`mux edit <nome-script>`: edita um script
+`mux debug <nome-script`: depuração de script
+`mux debug <niome-script> > test.sh`: saída do log da depuração
+
+Copie um projeto existente. Aliado a `c` e `cp
+```
+tmuxinator copy [existing] [new]
+```
+
+Liste todos os projetos que você configurou. Aliado a l e ls
+```
+tmuxinator list
+```
+
+Remova um projeto. Aliado a rm
+```
+tmuxinator delete [project]
+```
+
+Remova todas as configurações, aliases e scripts do tmuxinator. Aliado a `i`
+```
+tmuxinator implode
+```
+
+Examina seu ambiente e identifica problemas com sua configuração
+```
+tmuxinator doctor
+```
+
+Mostra a ajuda do tmuxinator. Aliado a h
+```
+tmuxinator help
+```
+
+Mostra os comandos do shell que são executados para um projeto
+```
+tmuxinator debug [project]
+```
+
+Mostra a versão do tmuxinator.
+```
+tmuxinator version
+```
+
+- gem install tmuxinator - instalação
+- mux version - mostra a versão
+* * *
+- source ~/.bashrc - atualizar o arquivo .bashrc
+- export DISABLE_AUTO_TITLE=true - inclua no .bashrc se o nome das janelas não estão sendo exibidos corretamente
+* * *
+- mux help - mostra a ajuda
+* * *
+- mux new <nome-projeto> - cria um projeto (script)
+- mux new ~/.config/tmuxinator <nome-projeto> - cria um projeto no local determinado
+- mux edit <nome-projeto> - editar o script
+- mux open <nome-projeto> - editar o script
+- mux <nome-projeto> - executa o script
+* * *
+- mux copy [existente] [novo] - copia um projeto existente
+- mux list - lista todos os projetos
+- mux delete <nome-projeto> - apaga um projeto
+* * *
+- mux implode - Remove todas as configurações, aliases e scripts
+* * *
+- mux doctor - examina seu ambiente e identifica problemas
+- mux debug <nome-projeto> - Mostra os comandos do shell que são executados para um projeto
+- mux debub <nome-projeto> > test.sh - redireciona o debug para ´test.sh
