@@ -9,7 +9,7 @@ Enter                                   Copia para o buffer
 C-b ]                                   Cola o buffer mais recente
 q					Sai do modo cópia
 
-### Gerenciador de clipboard
+#### Gerenciador de clipboard
 C-b =                                   Menu com todas as cópias
 C-b #                                   Mostra todas as cópias
 <numero>                                Retorna e cola a escolha (funciona com Enter)
@@ -30,4 +30,6 @@ Arquivos tar se encontrarem normalmente compactados, com nomes de arquivo termin
 `$ gunzip arquivo.tar.gz` : descompacta arquivo gzip
 `$ tar ztvf arquivo.tar.gz` : verificar um arquivo compactado
 
-
+## Bash
+`grep -v <termo-busca> <texto>`: exibe as linhas contendo o termo de busca (`-v` negação)
+`ls -l /usr/lib|cut -c1|grep d|wc -l`: conta o número de diretórios em `/usr/lib/`

@@ -125,6 +125,7 @@ cut -f4 animals.txt|cut -d, -f1
 
 ## grep
 Exibe as linhas que contêm uma string específica.
+
 Exibe as linhas que contém a string "Nutshell":
 ```
 grep Nutshell animals.txt
@@ -139,13 +140,6 @@ Exibir as linhas que contêm a string "Perl" em arquivos com nomes que terminam 
 ```
 grep Perl *.txt
 ```
-
-`ls -l /usr/lib|cut -c1|grep d|wc -l`: conta o número de diretórios em `/usr/lib/`
-
-
-## sort
-`sort animals.txt`: reordena as linhas de um arquivo na ordem crescente (`-r` para decrescente)
-
 
 ## ls 
 -1 resultados em apenas uma coluna
