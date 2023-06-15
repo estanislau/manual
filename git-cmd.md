@@ -105,12 +105,10 @@ Usamos quando queremos pegar um `commit` anterior e adicioná-lo como um novo `c
 `git revert <commithash>`: reverte as mudanças mas mantêm o comite revertido (anterior)
 
 1. `log --oneline` para localizar o `commit` que desejamos reverter
-2. `git revert HEAD --no-edit`: reverter a última alteração e fazer o commit
+2. `git revert HEAD --no-edit`: reverter para última alteração e fazer o commit
+2.1 `git revert HEAD~x`: para reverter para commits anteriores (x é número = volta 1 (reverte para os dois últimos), volta 2 (reverte os três últimos), etc)
 2.2 opção `--no-edit`: ignora o editor de mensagens do commit
 3. `log --oneline`: para confirmar a reversão
-
-==Observação:== 
-`git revert HEAD~x`: para reverter para comits anteriores (x é número = volta 1, volta 2, etc)
 
 ### Reset
 Usamos quando queremos mover o repositório de volta para um commit anterior, descartando qualquer alteração feita depois desse commit.
@@ -130,7 +128,7 @@ Se você souber o `hash` do commit, poderá desfazê-lo
 >Origin: nome default para a origem do remoto. Pode ser alterado
 
 ### Adicionar repositório remoto ao repositório local
-`git remote add origin git@github.com:estanislau/manual.git` 
+`git remote add <origin> git@github.com:estanislau/manual.git` 
 
 `git remote`: mostra os remotes cadastrados
 `git remote -v`: mostra o endereço dos remotes cadastrados
@@ -208,7 +206,7 @@ que já não existem mais remotamente serão excluídos.
 
 `git branch -d <nome-branch>`: apaga o branch <nome-branch> Geralmente utilizado quando (merge) mesclamos o branch secundário ao principal 
 
-`git push origin --delete <nome-branch>`: apaga o branch remoto
+`git push <origin> --delete <nome-branch>`: apaga o branch remoto
 `git push <remote> :<branch>`: um comando menor para excluir um branch remotamente
 
 ### Branch: unindo com merge
@@ -333,3 +331,4 @@ git pull --rebase origin main
 git push -u origin main
 
 Informa que não há um branch remoto chamado "teste" e indica o comando para a sua criação.
+
