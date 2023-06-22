@@ -32,3 +32,4 @@
 #				  primeiro caractere, mas que possua `rq` na sequência
 
 *.swp
+*.save
